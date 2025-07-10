@@ -1,0 +1,14 @@
+ Post request
+ $body = @{
+    id = "101"
+    name = "Ali"
+    age = 22
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/students" `
+  -Method POST `
+  -Body $body `
+  -ContentType "application/json"
+
+get request
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/students" -Method GET
